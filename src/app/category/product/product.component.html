@@ -1,0 +1,15 @@
+<div class="product">
+    <mat-card>
+        <mat-card-content>
+            <div (click)="handleClick()" class="category-container">
+                <div class="category-container__image">
+                    <app-lazy-image [src]="image"></app-lazy-image>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-footer>
+            <p>{{name}}</p>
+            <p>${{price}}</p>
+        </mat-card-footer>
+    </mat-card>
+</div>

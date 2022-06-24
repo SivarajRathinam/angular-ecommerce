@@ -1,0 +1,8 @@
+<div class="categories">
+    <h2>{{headerText|uppercase}}</h2>
+    <div class="categories__list">
+        <ng-template ngFor [ngForOf]="categories" let-category>
+            <app-category-list [category]="category"></app-category-list>
+        </ng-template>
+    </div>
+</div>

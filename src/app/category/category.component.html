@@ -1,0 +1,8 @@
+<div class="header">
+    <h1>{{categoryName}}</h1>
+</div>
+<div class="product-list">
+<ng-template ngFor [ngForOf]="products" let-product>
+    <app-product [data]="product"></app-product>
+</ng-template>
+</div>
