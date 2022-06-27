@@ -1,0 +1,22 @@
+@use '../../theme.scss' as theme;
+.property-details{
+    display: flex;
+    &__image{
+        height:100vh;
+        max-width: 50vw;
+    }
+    &__content{
+        padding:30px 20px 0px;
+        h2{
+            color:darken(theme.$primary,30%);
+            font-weight:bold;
+        }
+        h3{
+            color:darken(theme.$primary,20%)
+        }
+        h2,h3{
+            margin: 0;
+        }
+    }
+    
+}

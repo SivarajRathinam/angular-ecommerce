@@ -1,0 +1,27 @@
+$primary:#e5b895;
+$secondary:#ffffff;
+$black:#000000;
+$primaryPalatte:(
+    50:lighten($black,90%),
+    100:lighten($black,80%),
+    200:lighten($black,70%),
+    300:lighten($black,60%),
+    400:lighten($black,50%),
+    500:lighten($black,40%),
+    600:lighten($black,30%),
+    700:lighten($black,20%),
+    800:lighten($black,10%),
+    900:lighten($black,0%),
+    contrast:(
+        50:lighten($black,90%),
+    100:lighten($black,80%),
+    200:lighten($black,70%),
+    300:lighten($black,60%),
+    400:lighten($black,50%),
+    500:lighten($black,40%),
+    600:lighten($black,30%),
+    700:lighten($black,20%),
+    800:lighten($black,10%),
+    900:lighten($black,0%),
+    )
+);

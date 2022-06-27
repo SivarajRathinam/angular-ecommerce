@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <ng-template ngFor [ngForOf]="images" let-image let-i="index">
+                <app-lazy-image *ngIf="i===currentIndex" [src]="image"></app-lazy-image>
+            </ng-template>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="container-fluid">
+                <div class="row px-0">
+                    <ng-template ngFor [ngForOf]="images" let-image let-i="index">
+                        <div class="col gy-4" [ngClass]="i===currentIndex?'border border-2 border-primary':''" (click)="handleImageChange(i)">
+                            <app-lazy-image [src]="image" disableLoader="true"></app-lazy-image>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

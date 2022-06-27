@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "../../../theme.scss" as theme;
+
+.category{
+    padding:10px;
+    cursor: pointer;
+    &-container{
+        &__image{
+            min-height: 165px;
+        }
+    }
+    .mat-card{
+        height: 100%;
+        &:hover{
+            box-shadow: 6px 9px 8px 3px theme.$primary;
+        }
+    }
+    img{
+        width:100%;
+    }
+}

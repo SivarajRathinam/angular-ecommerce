@@ -1,0 +1,12 @@
+<div class="category">
+    <mat-card>
+        <mat-card-content>
+            <div (click)="handleClick()" class="category-container">
+                <div class="category-container__image">
+                    <app-lazy-image [src]="image"></app-lazy-image>
+                </div>
+                <p>{{name}}</p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
