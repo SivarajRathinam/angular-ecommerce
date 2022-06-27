@@ -27,7 +27,6 @@ export class SliderComponent implements OnInit,OnDestroy {
     this.currentImageIndex = 0;
   }
   updateImage(){
-    console.log('update image')
     if (this.images.length > this.currentImageIndex+1) {
       this.currentImageIndex += 1;
       return;
