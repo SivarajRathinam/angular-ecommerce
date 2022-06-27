@@ -18,7 +18,7 @@
         <div (click)="onCartClick()">
           <mat-icon [matBadge]="cartCount" matBadgeColor="warn">shopping_cart</mat-icon>
         </div>
-        <div class="position-absolute top-0 end-0" *ngIf="showCart">
+        <div class="position-absolute top-0 end-0 cartModal" *ngIf="showCart">
           <app-cart-list></app-cart-list>
         </div>
       </div>

@@ -1,16 +1,18 @@
+import { Subscription } from 'rxjs';
 import { product } from './../../category/product.interface';
 import { CartService } from './../../shared/cart.service';
-import { Component, OnInit, Renderer2,ViewChild,ElementRef, ContentChild } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChild, ElementRef, ContentChild, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit,OnDestroy {
   cartCount:number;
   cartData: product[];
   showCart:Boolean = false;
+  cartSubscription?: Subscription;
   @ContentChild('cartButton') cartButton?: ElementRef;
   @ContentChild('cartDetails') cartDetails?: ElementRef;
 
@@ -36,5 +38,8 @@ export class HeaderComponent implements OnInit {
   }
   onCartClick(){
     this.showCart = !this.showCart;
+  }
+  ngOnDestroy(): void {
+    this.cartSubscription?.unsubscribe?.()
   }
 }
