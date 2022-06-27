@@ -40,7 +40,7 @@ export class SliderComponent implements OnInit,OnDestroy {
   ngOnInit(): void {
     if (this.images.length > 0) {
       this.imageUrl = this.images[0];
-      this.startIntervalTimer()
+      // this.startIntervalTimer()
     }
   }
   selectIndex(index:number){

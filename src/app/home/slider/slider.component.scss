@@ -9,8 +9,10 @@
     align-items: center;
     background-color: #e5b895;
     img {
-      height: 500px;
-      width: auto;
+        max-height: 500px;
+        width: auto;
+        max-width: 100vw;
+    
     }
     .mat-icon {
       width: 36px;

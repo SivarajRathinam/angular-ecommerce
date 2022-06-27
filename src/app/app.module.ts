@@ -22,6 +22,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './category/product/product.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { LayoutComponent } from './layout/layout.component';
+import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     NotFoundComponent,
     CategoryComponent,
     ProductComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    LayoutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -22,19 +22,24 @@ export class ProductDetailsComponent implements OnInit {
     private http: HttpClient,
     private route: ActivatedRoute
   ) {
-    this.productData = productService.getProduct();
+    
   }
-
+  updateProductData(){
+    this.image = this.productData?.images?.[0] ?? '';
+    this.name = this.productData?.title;
+    this.price = this.productData?.price;
+    this.description = this.productData?.description;
+  }
   ngOnInit(): void {
+    this.productData = this.productService.productData;
     if (!this.productData?.id) {
       let id = this.route.snapshot.paramMap.get('id');
       this.http.get<product>(getProductById(id)).subscribe((resp) => {
         this.productData = resp;
-        this.image = this.productData?.images?.[0] ?? '';
-        this.name = this.productData?.title;
-        this.price = this.productData?.price;
-        this.description = this.productData?.description;
+        this.updateProductData()
       });
+    }else{
+      this.updateProductData()
     }
   }
 }

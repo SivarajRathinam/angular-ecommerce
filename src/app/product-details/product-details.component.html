@@ -1,10 +1,10 @@
 <div class="property-details">
-    <div>
+    <div class="property-details__image">
         <app-lazy-image [src]="image"></app-lazy-image>
     </div>
-    <div>
-        <p>{{name}}</p>
-        <p>${{price}}</p>
-        <p>{{description}}</p>
+    <div class="property-details__content">
+        <h2>{{name}}</h2>
+        <h3>${{price}}</h3>
+        <h3>{{description}}</h3>
     </div>
 </div>
