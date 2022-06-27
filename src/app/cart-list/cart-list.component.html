@@ -1,0 +1,10 @@
+<div class="container bg-light cart-container shadow-sm rounded">
+    <ng-template ngFor [ngForOf]="cartProducts" let-product>
+        <app-cart-item [product]="product"></app-cart-item>
+    </ng-template>
+    <div *ngIf="cartProducts.length===0">
+        <div class="cart-container__message">
+            <p>No Products available</p>
+        </div>
+    </div>
+</div>

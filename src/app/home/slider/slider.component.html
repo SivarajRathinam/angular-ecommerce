@@ -1,0 +1,14 @@
+<div class="container-slide container-fluid p-0">
+    <div class="slider" >
+        <ng-template ngFor [ngForOf]="images" let-image let-i="index">
+            <img @img-animation
+                 *ngIf="currentImageIndex === (i)"
+                 [src]="image">
+        </ng-template>
+    </div>
+    <div class="image-selector">
+        <ng-template ngFor [ngForOf]="images" let-image let-i="index" >
+            <div class="dot" [ngClass]="i===currentImageIndex?'selected':''" (click)="selectIndex(i)"></div>
+        </ng-template>
+    </div>
+</div>

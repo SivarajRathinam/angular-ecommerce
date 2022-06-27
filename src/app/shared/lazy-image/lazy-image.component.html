@@ -1,0 +1,7 @@
+<div class="img-container">
+    <img [src]="src" [ngClass]="isLoaded?'':'hide'" (load)="onImgLoaded()"/>
+    <div *ngIf="!isLoaded" class="img-container-loader">
+        <div class="img-container-loader__shadow"></div>
+        <app-loader></app-loader>
+    </div>
+</div>

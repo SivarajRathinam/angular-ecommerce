@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "../../theme.scss" as theme;
+.categories {
+    padding:20px 0px 40px;
+  h2 {
+    color: darken(theme.$primary,30%);
+    text-align: center;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

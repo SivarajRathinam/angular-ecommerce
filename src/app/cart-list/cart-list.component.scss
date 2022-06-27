@@ -1,0 +1,12 @@
+.cart-container{
+    width:400px;
+    max-width: 100vw;
+    max-height:300px;
+    overflow: scroll;
+    &__message{
+        height:200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

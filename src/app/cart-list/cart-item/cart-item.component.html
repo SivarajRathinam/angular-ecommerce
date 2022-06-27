@@ -1,0 +1,19 @@
+<div class="my-2 row">
+    <div class="col">
+        <app-lazy-image [src]="product.images?.[0]??''"></app-lazy-image>
+    </div>
+    <div class="col">
+        <p class="m-0">{{product.title}}</p>
+        <p class="m-0">${{product.price}}</p>
+        <div class="container p-0">
+            <div class="row">
+                <div class="col d-flex gap-2 p-2 align-items-center">
+                    <button type="button" class="btn btn-outline-primary btn-sm" (click)="handleAddItemCount()">+</button>
+                    <p class="m-0">{{product.itemCount??0}}</p>
+                    <button type="button" class="btn btn-outline-primary btn-sm" (click)="handleRemoveItemCount()">-</button>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="button" (click)="handleRemoveFromCart()">Remove from cart</button>
+    </div>
+</div>
