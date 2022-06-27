@@ -1,4 +1,27 @@
-<div class="header">
-    <div class="header"></div>
-    <div></div>
-</div>
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+    <h2 class="text-primary m-0">Carter</h2>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-0 mb-lg-0 ms-2 align-items-center">
+        <li class="nav-item">
+          <a class="text-secondary m-0 p-0 mx-2 text-decoration-none" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="text-secondary m-0 p-0 text-decoration-none" routerLink="/category">Categories</a>
+        </li>
+      </ul>
+      <div class="d-flex position-relative" (appClickOutside)="onClickOutside()">
+        <div (click)="onCartClick()">
+          <mat-icon [matBadge]="cartCount" matBadgeColor="warn">shopping_cart</mat-icon>
+        </div>
+        <div class="position-absolute top-0 end-0" *ngIf="showCart">
+          <app-cart-list></app-cart-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

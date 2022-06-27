@@ -6,6 +6,8 @@ import {MatGridListModule,} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +26,10 @@ import { ProductComponent } from './category/product/product.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './layout/header/header.component';
+import { ImagePreviewComponent } from './shared/image-preview/image-preview.component';
+import { CartListComponent } from './cart-list/cart-list.component';
+import { CartItemComponent } from './cart-list/cart-item/cart-item.component';
+import { ClickOutsideDirective } from './click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,11 @@ import { HeaderComponent } from './layout/header/header.component';
     ProductComponent,
     ProductDetailsComponent,
     LayoutComponent,
-    HeaderComponent
+    HeaderComponent,
+    ImagePreviewComponent,
+    CartListComponent,
+    CartItemComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,
@@ -50,7 +60,9 @@ import { HeaderComponent } from './layout/header/header.component';
     MatGridListModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatBadgeModule,
+    MatSnackBarModule
     
   ],
   providers: [],

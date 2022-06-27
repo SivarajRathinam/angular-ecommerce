@@ -38,3 +38,11 @@ $website-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$theme-colors: (
+  "primary": theme.$primary,
+  "secondary":theme.$secondary,
+  "dark":darken(theme.$primary,30%)
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";

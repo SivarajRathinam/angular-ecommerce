@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class LazyImageComponent implements OnInit {
   @Input() src?:string;
+  @Input() disableLoader?:string;
   isLoaded:Boolean;
   constructor() {
     this.src = ''
@@ -14,7 +15,9 @@ export class LazyImageComponent implements OnInit {
    }
 
   ngOnInit(): void {
-  
+    if(this.disableLoader==='true'){
+      this.isLoaded = true
+    }
   }
   onImgLoaded(){
     this.isLoaded = true

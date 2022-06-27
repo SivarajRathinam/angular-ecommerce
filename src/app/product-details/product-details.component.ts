@@ -1,3 +1,4 @@
+import { CartService } from './../shared/cart.service';
 import { ActivatedRoute } from '@angular/router';
 import { getProductById } from './../../constants/api';
 import { HttpClient } from '@angular/common/http';
@@ -12,7 +13,7 @@ import { ProductService } from './product.service';
 })
 export class ProductDetailsComponent implements OnInit {
   productData?: product;
-  image?: string;
+  images?: string[];
   name?: string;
   price?: number;
   description?: string;
@@ -20,12 +21,13 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private cartService:CartService,
   ) {
     
   }
   updateProductData(){
-    this.image = this.productData?.images?.[0] ?? '';
+    this.images = this.productData?.images;
     this.name = this.productData?.title;
     this.price = this.productData?.price;
     this.description = this.productData?.description;
@@ -41,5 +43,8 @@ export class ProductDetailsComponent implements OnInit {
     }else{
       this.updateProductData()
     }
+  }
+  handleAddProductToCart(){
+    if(this.productData) this.cartService.addToCart(this.productData);
   }
 }
