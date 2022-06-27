@@ -1,9 +1,10 @@
+import { Subscription } from 'rxjs';
 import { CartService } from './../shared/cart.service';
 import { ActivatedRoute } from '@angular/router';
 import { getProductById } from './../../constants/api';
 import { HttpClient } from '@angular/common/http';
 import { product } from './../category/product.interface';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductService } from './product.service';
 
 @Component({
@@ -11,12 +12,13 @@ import { ProductService } from './product.service';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss'],
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent implements OnInit,OnDestroy {
   productData?: product;
   images?: string[];
   name?: string;
   price?: number;
   description?: string;
+  apiSubscription?:Subscription;
 
   constructor(
     private productService: ProductService,
@@ -36,7 +38,7 @@ export class ProductDetailsComponent implements OnInit {
     this.productData = this.productService.productData;
     if (!this.productData?.id) {
       let id = this.route.snapshot.paramMap.get('id');
-      this.http.get<product>(getProductById(id)).subscribe((resp) => {
+      this.apiSubscription = this.http.get<product>(getProductById(id)).subscribe((resp) => {
         this.productData = resp;
         this.updateProductData()
       });
@@ -46,5 +48,8 @@ export class ProductDetailsComponent implements OnInit {
   }
   handleAddProductToCart(){
     if(this.productData) this.cartService.addToCart(this.productData);
+  }
+  ngOnDestroy(): void {
+    this.apiSubscription?.unsubscribe?.()
   }
 }
