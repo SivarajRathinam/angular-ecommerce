@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href='/angular-ecommerce/'",
+    "build": "ng build --base-href='/angular-ecommerce/' --deploy-url='/angular-ecommerce/'",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "npx angular-cli-ghpages --dir=dist/website",
