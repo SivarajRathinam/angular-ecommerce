@@ -9,7 +9,14 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "npx angular-cli-ghpages --dir=dist/website",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build && git add -A .",
+      "pre-push": "npm run test"
+    }
   },
   "private": true,
   "dependencies": {
