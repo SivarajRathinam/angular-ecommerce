@@ -1,0 +1,22 @@
+<router-outlet></router-outlet>
+<div class="container">
+    <div class="row justify-content-center m-auto">
+        <div class="col-6">
+            <form (ngSubmit)="handleSubmit()" [formGroup]="form" [ngClass]="showError">
+                <div mb-3>
+                    <label for="nameLabel">Name</label>
+                    <input name="name" formControlName="name" id="nameLabel" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="emailLabel">Email</label>
+                    <input name="email" formControlName="email" id="emailLabel" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="descriptionLabel">Description</label>
+                    <textarea name="description" formControlName="description" id="descriptionLabel" class="form-control" ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

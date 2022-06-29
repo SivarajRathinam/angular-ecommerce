@@ -30,7 +30,7 @@ import { ImagePreviewComponent } from './shared/image-preview/image-preview.comp
 import { CartListComponent } from './cart-list/cart-list.component';
 import { CartItemComponent } from './cart-list/cart-item/cart-item.component';
 import { ClickOutsideDirective } from './click-outside.directive';
-
+import { ContactModule } from './contact/contact.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +50,7 @@ import { ClickOutsideDirective } from './click-outside.directive';
     ImagePreviewComponent,
     CartListComponent,
     CartItemComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +62,8 @@ import { ClickOutsideDirective } from './click-outside.directive';
     MatIconModule,
     MatCardModule,
     MatBadgeModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ContactModule
     
   ],
   providers: [],

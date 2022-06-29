@@ -14,7 +14,7 @@ const routes: Routes = [
       {path:":id",component:CategoryComponent}
     ]},
     {path:'product',children:[{path:':id',component:ProductDetailsComponent}]},
-  {path:'**', component:NotFoundComponent}
+  // {path:'**', component:NotFoundComponent}
 ];
 
 @NgModule({
